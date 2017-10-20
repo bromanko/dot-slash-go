@@ -31,7 +31,7 @@ function bcli_show_header() {
 function blci_help() {
   # If we don't have any additional help arguments, then show the app's
   # header as well.
-  if [ $# == 0 ]; then
+  if [ $# == 1 ]; then
       bcli_show_header "$ROOT_DIR/.go"
   fi
 
