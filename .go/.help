@@ -1,7 +1,7 @@
-This is a demonstration application which makes use of Bash CLI
+This is a demonstration application which makes use of dot-slash-go
 to present its interface.
 
-You can place any scripts here and Bash CLI will automatically make
+You can place any scripts here and dot-slash-go will automatically make
 them available, you can also add <command>.help files to provide contextual
 help information for individual commands.
 
