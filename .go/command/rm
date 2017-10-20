@@ -5,8 +5,8 @@ if [ $# == 0 ]; then
 fi
 
 APP_DIR=`pwd`
-if [[ -d "$APP_DIR/app" && -f "$APP_DIR/app/.bash_cli" ]]; then
-    APP_DIR="$APP_DIR/app"
+if [[ -d "$APP_DIR/.go" && -f "$APP_DIR/.go/.bash_cli" ]]; then
+    APP_DIR="$APP_DIR/.go"
 fi
 
 if [[ ! -f "$APP_DIR/.bash_cli" ]]; then

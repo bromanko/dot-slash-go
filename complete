@@ -8,9 +8,9 @@ function _bash_cli() {
     local curr_arg;
     curr_arg="${COMP_WORDS[COMP_CWORD]}"
 
-    # Locate the correct command to execute by looking through the app directory
+    # Locate the correct command to execute by looking through the .go directory
     # for folders and files which match the arguments provided on the command line.
-    local cmd_file="$root_dir/app/"
+    local cmd_file="$root_dir/.go/"
     local cmd_arg_start=1
     while [[ -d "$cmd_file" && $cmd_arg_start -le $COMP_CWORD ]]; do
 

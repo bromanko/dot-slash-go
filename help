@@ -8,12 +8,12 @@ CLI_ENTRYPOINT=`basename "$1"`
 # If we don't have any additional help arguments, then show the app's
 # header as well.
 if [ $# == 0 ]; then
-    bcli_show_header "$ROOT_DIR/app"
+    bcli_show_header "$ROOT_DIR/.go"
 fi
 
 # Locate the correct level to display the helpfile for, either a directory
 # with no further arguments, or a command file.
-HELP_FILE="$ROOT_DIR/app/"
+HELP_FILE="$ROOT_DIR/.go/"
 HELP_ARG_START=2
 while [[ -d "$HELP_FILE" && $HELP_ARG_START -le $# ]]; do
     HELP_FILE="$HELP_FILE/${!HELP_ARG_START}"

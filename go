@@ -5,9 +5,9 @@ CLI_ENTRYPOINT=`basename $0`
 
 . "$ROOT_DIR/utils"
 
-# Locate the correct command to execute by looking through the app directory
+# Locate the correct command to execute by looking through the .go directory
 # for folders and files which match the arguments provided on the command line.
-CMD_FILE="$ROOT_DIR/app/"
+CMD_FILE="$ROOT_DIR/.go/"
 CMD_ARG_START=1
 while [[ -d "$CMD_FILE" && $CMD_ARG_START -le $# ]]; do
 
