@@ -22,7 +22,7 @@ the following files in your `.go` directory.
 
  - **.name** should contain the name of your app, something like "My Awesome App"
  - **.author** is meant to contain your name (or the name of your company)
- - **.version** should contain the version of your app, you can automatically include this using `git describe --tags > app/.version`
+ - **.version** should contain the version of your app, you can automatically include this using `git describe --tags > .go/.version`
  - **.help** should be a short-ish description of what your app does and how people should use it.
    Don't worry about including help for every command here, or even a command list, Bash CLI will
    handle that for you automatically.
