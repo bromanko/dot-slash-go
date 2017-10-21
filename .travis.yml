@@ -1,11 +1,14 @@
-language: go #heh
+language: c
+install: echo install
+script: echo script
 before_deploy:
-  - ./go/package
+  - "./go package"
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: .build/*.tar.gz
+  api_key:
+    secure: DR7UYzcbOUQ00TPPKjqGmLWTB3/KVqVo5LcjqSC9X4EpQHLcxsT/PeNtBqA5rSB3uElwa5y6dFMRrvCcYwgcBGkmIvkB5AL/YuaM121BK4kxXok8EM9dpviygHl7ASzuZPLxz4n0K1N5TcXAEnpIjIQgBHEP93nvxcCcR5or/3/u5G0421PJ2NSLor2BMeb+dcxaf5k2VnTWPOB7oIXyJ98eoLsxPslpOxosca/ZqdapX+X5TZqyhymv02FeHBYS4x/Ed58iaAXOiaRCVwNeBCLMkg88hMSYEK0Y9SgCf49DkGY3v1FCOyL0ytJoNabhilU7I9nwBQS77Of+anZZeXdDZqWROoXgfBLbxJKmJneTu/SNmbv9AGwAZl66olyKsMBU/0hzcrIT1BEnaK9PIiqK8RaUpMmHBTFhaFhLxlOQK6gWmb0YXkUfMI9PJJWQ03i7yMmg/M4DhTLSBIDN26U3imwOVKQsJR4PCrPgUgveX/UMYVzTBAKo/LgGid4OJrV8LbmTcAk2sQaf10/R1FFF7Zh0uEjyBMp9Z5it7DyP66sWt9V3CWwONY/1g/khmTyMixJxhQhCTTjME8TDfN29rr4Z0N1hPm59vhUxGbSr9Xf1C1VW5zvAPU8SEUxgL6tWU/oda1SgMCBMpbL8kbCLKZ26uyG38VN9mc/oc0Q=
+  file_glob: true
+  file: "./.build/*.tar.gz"
   skip_cleanup: true
   on:
     tags: true
-

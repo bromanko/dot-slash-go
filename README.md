@@ -1,4 +1,4 @@
-# dot-slash-go
+# dot-slash-go [![Build Status](https://travis-ci.org/bromanko/dot-slash-go.svg?branch=master)](https://travis-ci.org/bromanko/dot-slash-go)
 
 An extensible, friendly framework for project [go scripts](https://www.thoughtworks.com/insights/blog/praise-go-script-part-i).
 

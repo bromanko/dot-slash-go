@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
+VERSION=$(cat ".go/.version")
+
+echo -e "\033[32mCreating package for version ${VERSION}\033[39m"
 mkdir -p .build
-tar czfL .build/dot-slash-go.tar.gz -C dist .
+tar czfh .build/dot-slash-go-${VERSION}.tar.gz -C dist .
