@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mkdir -p .build
+tar czfL .build/dot-slash-go.tar.gz -C dist .
