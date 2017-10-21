@@ -1,0 +1,11 @@
+language: go #heh
+before_deploy:
+  - ./go/package
+deploy:
+  provider: releases
+  api_key: "GITHUB OAUTH TOKEN"
+  file: .build/*.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+
