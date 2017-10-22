@@ -10,6 +10,8 @@ COLOR_BLUE="\033[34m"
 COLOR_DARK_GRAY="\033[38m"
 COLOR_NORMAL="\033[39m"
 
+# Get the latest version
+
 GITHUB_URL="https://api.github.com/repos/bromanko/dot-slash-go/releases/latest"
 RELEASE_VERSION=`curl --silent ${GITHUB_URL} \
   | grep '"tag_name":' \
@@ -21,11 +23,32 @@ RELEASE_URL=`curl --silent ${GITHUB_URL} \
 echo -e "${COLOR_BLUE}Installing dot-slash-go ${RELEASE_VERSION}${COLOR_NORMAL}"
 echo -e "${COLOR_DARK_GRAY}${RELEASE_URL}${COLOR_NORMAL}"
 
+# Install
+
 curl -sL ${RELEASE_URL} | tar xz
 
+# Customize
 
+DEFAULT="$(cat ".go/.name" 2>/dev/null)"
+DEFAULT=${DEFAULT:-"Your App Name Here"}
+read -p "Name of the app [${DEFAULT}]: " NAME
+NAME=${NAME:-${DEFAULT}}
 
-echo -e "\n"
+DEFAULT="$(cat ".go/.author" 2>/dev/null)"
+DEFAULT=${DEFAULT:-"Your Name Here"}
+read -p "Author of the app [${DEFAULT}]: " AUTHOR
+AUTHOR=${AUTHOR:-${DEFAULT}}
+
+DEFAULT="$(cat ".go/.version" 2>/dev/null)"
+DEFAULT=${DEFAULT:-"v1.0.0"}
+read -p "Version of the app [${DEFAULT}]: " VERSION
+VERSION=${VERSION:-${DEFAULT}}
+
+echo ${NAME} > .go/.name
+echo ${AUTHOR} > .go/.author
+echo ${VERSION} > .go/.version
+
+echo -e ""
 echo -e "Great! You're all set."
 echo -e "Check things out by running ${COLOR_GREEN}./go${COLOR_NORMAL}"
 
