@@ -2,6 +2,8 @@
 
 An extensible, friendly framework for project [go scripts](https://www.thoughtworks.com/insights/blog/praise-go-script-part-i).
 
+![dot-slash-go Example](example.png)
+
 ## Features
 
 * Simple installation in existing projects
