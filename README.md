@@ -13,7 +13,7 @@ An extensible, friendly framework for project [go scripts](https://www.thoughtwo
 In your project root:
 
 ```sh
-$(curl -fsSl https://github.com/bromanko/dot-slash-go/blob/master/install)
+curl -sS https://github.com/bromanko/dot-slash-go/blob/master/install | bash
 ```
 
 ## Customizing
