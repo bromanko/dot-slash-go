@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+case ${1-} in '') echo -e "\033[31mVERSION must be specified\033[39m" >&2; exit 1;; esac
+VERSION=${1?VERSION must be set}
+
+echo ${VERSION} > .go/.version
+git add .go/.version
+git commit -m "Release ${VERSION}"
+git tag ${VERSION}
+echo -e "\033[32mUpdated version to ${VERSION}\033[39m"

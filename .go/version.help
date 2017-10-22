@@ -1,0 +1,4 @@
+NEW_VERSION  - The new version number you would like to set
+
+Sets the version metadata, commits the change and tags the commit.
+Does NOT push the changes.
