@@ -14,11 +14,9 @@ COLOR_NORMAL="\033[39m"
 
 GITHUB_URL="https://api.github.com/repos/bromanko/dot-slash-go/releases/latest"
 RELEASE_VERSION=`curl --silent ${GITHUB_URL} \
-  | grep '"tag_name":' \
-  | sed -E 's/.*"([^"]+)".*/\1/'`
+  | sed -E 's/.*"tag_name":"([^"]+)".*/\1/'`
 RELEASE_URL=`curl --silent ${GITHUB_URL} \
-  | grep '"browser_download_url":' \
-  | sed -E 's/.*"([^"]+)".*/\1/'`
+  | sed -E 's/.*"browser_download_url":"([^"]+)".*/\1/'`
 
 echo -e "${COLOR_BLUE}Installing dot-slash-go ${RELEASE_VERSION}${COLOR_NORMAL}"
 echo -e "${COLOR_DARK_GRAY}${RELEASE_URL}${COLOR_NORMAL}"
