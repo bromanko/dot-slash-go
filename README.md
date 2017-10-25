@@ -69,3 +69,18 @@ Some changes were made to better fit the needs of a go script.
 1. **Can I use dot-slash-go to run things which aren't bash scripts?**
    Absolutely, dot-slash-go simply executes files - it doesn't care whether they're written in Bash, Ruby,
    Python or Go - if you can execute the file then you can use it with dot-slash-go.
+
+1. **How can I define common variables, or utility functions?**
+   Place a dot-prefixed executable shell script in your `.go` folder such as `.globals`. Then, execute 
+   that script from your commands. For example:
+   
+   ```bash
+   #!/usr/bin/env bash
+   
+   set -e
+   . ".go/.globals"
+   
+   # Call a function defined in globals
+   init
+   # Do command-specific work
+   ```
